@@ -1,12 +1,17 @@
 from debian:jessie
 
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    python \
-    python-dev \
-    python-pip \
-    git \
-    wget
+        build-essential \
+        git \
+        libxml2-dev \
+        libxslt-dev \
+        python \
+        python-dev \
+        python-pip \
+        wget \
+        zlib1g-dev
+
+RUN pip install lxml
 
 WORKDIR /root
 RUN wget http://releases.ansible.com/ansible/ansible-2.0.0-0.8.rc3.tar.gz
