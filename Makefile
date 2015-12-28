@@ -1,5 +1,5 @@
-NAME = pfeff/ansible
-VERSION = latest
+NAME = mpfefferle/ansible
+VERSION = 1.9.4
 
 .PHONY: all build run
 
