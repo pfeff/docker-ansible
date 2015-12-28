@@ -14,10 +14,12 @@ RUN apt-get update && apt-get install -y \
 RUN pip install lxml
 
 WORKDIR /root
-RUN wget http://releases.ansible.com/ansible/ansible-1.9.4.tar.gz
-RUN tar xvzf ansible-1.9.4.tar.gz 
 
-WORKDIR /root/ansible-1.9.4
+ENV VERSION 1.9.4
+RUN wget http://releases.ansible.com/ansible/ansible-${VERSION}.tar.gz
+RUN tar xvzf ansible-${VERSION}.tar.gz 
+
+WORKDIR /root/ansible-${VERSION}
 RUN python setup.py install
 
 WORKDIR /work
